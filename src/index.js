@@ -6,6 +6,7 @@ import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { ShopProvider } from "./contexts/shop-data.context";
 import { CartShoppingProvider } from "./contexts/cart-shoping.context.jsx";
+import { CartProvider } from "./contexts/cart-data.context";
 
 import "./index.scss";
 
@@ -17,7 +18,9 @@ render(
       <UserProvider>
         <ShopProvider>
           <CartShoppingProvider>
-            <App />
+            <CartProvider>
+              <App />
+            </CartProvider>
           </CartShoppingProvider>
         </ShopProvider>
       </UserProvider>

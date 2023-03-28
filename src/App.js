@@ -7,6 +7,8 @@ import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
 import Shop from "./routes/shop-data/shop-data.component";
+import Category from "./routes/category/category.routes";
+// import Checkout from "./routes/checkout/checkout-component";
 
 const App = () => {
   const { currentUser } = useContext(UserContext);
@@ -15,6 +17,7 @@ const App = () => {
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
+        <Route path="shop/:title" element={<Category />} />
         <Route
           path="auth"
           element={

@@ -1,18 +1,20 @@
 // import SHOP_DATA from "../../shop-data.json";
-import { useContext } from "react";
-import ProductCard from "../../components/product/product-card.component";
+import { useContext, Fragment } from "react";
+
+import ProductPreview from "../../components/products-preview/product-preview.component";
 import { ShopContext } from "../../contexts/shop-data.context";
 import "./shop.styles.scss";
 
 const Shop = () => {
   const { shopData } = useContext(ShopContext);
-
+  // console.log(shopData);
   return (
-    <div className="products-container">
-      {shopData.map((data) => {
-        return <ProductCard products={data} key={data.id} />;
+    <>
+      {Object.keys(shopData).map((title) => {
+        const product = shopData[title];
+        return <ProductPreview title={title} product={product} />;
       })}
-    </div>
+    </>
   );
 };
 
