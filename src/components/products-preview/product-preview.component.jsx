@@ -1,4 +1,4 @@
-// import "./product-preview.styles.scss";
+import "./product-preview.styles.scss";
 import ProductCard from "../product/product-card.component";
 import { useNavigate } from "react-router-dom";
 const ProductPreview = (props) => {
